@@ -1,20 +1,26 @@
 body {
+    overflow-x: hidden;
     text-align: center;
     margin: 0px;
     background-color: #99c0e3;
-    background-size: cover;
+    background-size: auto;
     color: #99c0e3;
     font-family: 'Dongle', sans-serif;
 }
+
+header {
+    max-width: 100%;
+}
+
 nav {
     margin-top: 0;
     padding: 24px;
     text-align: right;
     font-family: 'Dongle', sans-serif;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
-    /*background-color: #08afa9;*/
     background-color: white;
 }
+
 .menu {
     transition: 0.4s;
     color: black;
@@ -23,28 +29,37 @@ nav {
     padding: 25px 2.5px 10px 2.5px;
     margin: 0 0px;
 }
+
 .menu:hover {
     background-color: #99c0e3;
     color: white;
     padding: 38px 10px 25px 10px;
 }
-.Logo{
+
+.Logo {
     float: left;
     margin-top: 0px;
-    width:100px;
+    width: 100px;
     height: 60px;
     padding: 12px;
 }
-.lona{
-    width: 80%; /* hacemos que la cabecera ocupe el ancho completo de la página */
-   	right: 0;
-   	top: 0; /* Posicionamos la cabecera pegada arriba */
-   	margin: 0px;
+
+.lona {
+    overflow-x: hidden;
+    max-width: 100%;
+    left: 0;
+    top: 0;
+    margin: 0px;
 }
-.div_prin{
+
+.lona img{
+    width: 100%;
+    height: auto;
+}
+
+.div_prin {
     margin: 0 auto;
     width: 70%;
-    /* Esquema del formulario */
     padding: 1em;
     border: 1px solid #CCC;
     border-radius: 1em;
@@ -52,22 +67,105 @@ nav {
     background-color: white;
     color: black;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
+    margin-left: auto;
+    margin-right: auto;
 }
-.coches{
+.coches {
     margin: 0 auto;
     width: 70%;
     height: 550px;
-    /* Esquema del formulario */
     padding: 1em;
     border: 1px solid #CCC;
     border-radius: 1em;
     background-color: white;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
 }
-.div_prin_contacto{
+.container {
+    margin: 0 auto;
+    width: 70%;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    text-align: center;
+    background-color: white;
+    color: black;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
+    margin-left: auto;
+    margin-right: auto;
+  }       
+  
+  .image-container-coches {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 10px;
+  }
+  .image-container-reserva {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh; /* Puedes ajustar esto según tus necesidades */
+  }
+  
+  .image-container-reserva img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+  .text-container {
+    text-align: center;
+    color: black;
+  }
+  
+  h3 {
+    margin-top: 10px;
+  }
+  #reservar {
+    margin-top: 5px;
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+   }
+   
+   #reservar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+   }
+   
+   #reservar:hover {
+    color: #e8e8e8;
+   }
+   
+   #reservar:hover::before {
+    width: 100%;
+   }
+
+.div_prin_contacto {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Relación de aspecto de 16:9 (9 dividido por 16 da 0.5625) */
+    overflow: hidden;
     margin: 0 auto;
     width: 45%;
-    /* Esquema del formulario */
     padding: 1em;
     border: 1px solid #CCC;
     border-radius: 1em;
@@ -76,17 +174,27 @@ nav {
     color: #99c0e3;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
 }
-.cita{
+#ubicacion{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cita {
     margin: 0 auto;
     width: 70%;
 }
+
 label {
     display: inline-block;
     width: 48%;
     text-align: left;
 }
+
 input,
-textarea{
+textarea {
     display: inline-block;
     width: 48%;
     text-align: center;
@@ -96,7 +204,7 @@ textarea{
     border-radius: 1em;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
 }
-#borrar{
+#borrar {
     background-color: white;
     color: red;
     font-size: medium;
@@ -124,7 +232,7 @@ textarea{
     background: #ffffff;
     padding: 30px 0px;
     text-align: center;
-    width: 100%;
+    max-width: 100%;
     margin-top: 4em;
     padding-top: 4em;
     position:page;
